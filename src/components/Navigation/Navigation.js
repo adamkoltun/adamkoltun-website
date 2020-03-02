@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledNavigationWrapper = styled.nav`
@@ -9,11 +10,21 @@ const Navigation = () => (
   <StyledNavigationWrapper>
     <span>adamkoltun.dev</span>
     <ul>
-      <li>Oferta</li>
-      <li>Portfolio</li>
-      <li>O mnie</li>
-      <li>Blog</li>
-      <li>Kontakt</li>
+      <li>
+        <Link to="/offer">Oferta</Link>
+      </li>
+      <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/about">O mnie</Link>
+      </li>
+      <li>
+        <Link to="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link to="/contact">Kontakt</Link>
+      </li>
     </ul>
   </StyledNavigationWrapper>
 )
