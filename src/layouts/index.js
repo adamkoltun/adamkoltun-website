@@ -1,12 +1,12 @@
 import React from "react"
 import GlobalStyle from "../assets/styles/globalStyles"
 
-import Navigation from "../components/Navigation/Navigation"
+import TopBar from "../components/organisms/TopBar/TopBar"
 
 const MainLayout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Navigation />
+    <TopBar />
     {children}
   </>
 )
