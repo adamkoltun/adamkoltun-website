@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+import Logotype from "../../atoms/Logotype/Logotype"
 import Hamburger from "../../atoms/Hamburger/Hamburger"
 
 const StyledTopBar = styled.div`
@@ -13,14 +13,9 @@ const StyledTopBar = styled.div`
   display: flex;
   justify-content: space-between;
 `
-
-const StyledLogotype = styled(Link)`
-  font-family: "Fira Sans";
-  font-weight: 600;
-`
 const TopBar = () => (
   <StyledTopBar>
-    <StyledLogotype to="/">adamkoltun.dev</StyledLogotype>
+    <Logotype />
     <Hamburger />
   </StyledTopBar>
 )
