@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Adam Koltun - Web Developer`,
+    description: `Zajmuję się projektowaniem nowoczesnych oraz użytecznych stron internetowych. Projekt powstaje na podstawie strategii opracowanej na danych, zebranych podczas analizy potrzeb użytkowników oraz biznesu. Jego zadaniem jest rozwinięcie Twojej firmy.`,
+    author: `Adam Koltun`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +15,10 @@ module.exports = {
           {
             family: `Montserrat`,
             variants: [`300`, `400`, `500`],
+          },
+          {
+            family: `Fira Sans`,
+            variants: [`600`],
           },
         ],
       },
