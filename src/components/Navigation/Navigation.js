@@ -2,13 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const StyledNavigationWrapper = styled.nav`
-  font-family: "Montserrat";
+const StyledNavigationWrapper = styled.nav``
+
+const StyledLogotype = styled.span`
+  font-family: "Fira Sans";
+  font-weight: 600;
 `
 
 const Navigation = () => (
   <StyledNavigationWrapper>
-    <span>adamkoltun.dev</span>
+    <StyledLogotype>adamkoltun.dev</StyledLogotype>
     <ul>
       <li>
         <Link to="/offer">Oferta</Link>

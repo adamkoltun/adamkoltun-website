@@ -1,4 +1,4 @@
-import createGlobalStyle from "styled-components"
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Montserrat';
+    color: #292929;
   }
 
   button {
