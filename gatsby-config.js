@@ -18,7 +18,7 @@ module.exports = {
           },
           {
             family: `Fira Sans`,
-            variants: [`600`],
+            variants: [`400`, `600`],
           },
         ],
       },
