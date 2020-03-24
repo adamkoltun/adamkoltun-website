@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
+    padding: 30px 25px;
     font-family: 'Montserrat';
     color: #292929;
   }
@@ -30,6 +31,11 @@ const GlobalStyle = createGlobalStyle`
   ul {
     padding: 0;
     margin: 0;
+  }
+
+  a {
+    color: #292929;
+    text-decoration: none;
   }
 `
 
