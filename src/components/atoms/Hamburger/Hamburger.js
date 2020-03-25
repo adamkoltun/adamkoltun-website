@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const StyledHamburger = styled.button`
   border: none;
@@ -7,24 +7,47 @@ const StyledHamburger = styled.button`
 `
 
 const StyledHamburgerBox = styled.span`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
+  position: relative;
   height: 10px;
-  width: 30px;
 `
 
-const StyledHamburgerInner = styled.span`
+const StyledFirstLine = styled.span`
+  display: block;
   width: 30px;
   height: 2px;
   background-color: #292929;
+  transition: transform 0.3s ease-in-out;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      transform: translateY(4px) scale(0.8) rotate(45deg);
+    `}
 `
 
-const Hamburger = () => (
-  <StyledHamburger>
+const StyledSecondLine = styled.span`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #292929;
+  transition: transform 0.3s ease-in-out;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      transform: translateY(-4px) scale(0.8) rotate(-45deg);
+    `}
+`
+
+const Hamburger = ({ handleClick, isActive }) => (
+  <StyledHamburger onClick={handleClick}>
     <StyledHamburgerBox>
-      <StyledHamburgerInner></StyledHamburgerInner>
-      <StyledHamburgerInner></StyledHamburgerInner>
+      <StyledFirstLine isActive={isActive}></StyledFirstLine>
+      <StyledSecondLine isActive={isActive}></StyledSecondLine>
     </StyledHamburgerBox>
   </StyledHamburger>
 )
