@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import Logotype from "../../atoms/Logotype/Logotype"
@@ -13,11 +13,18 @@ const StyledTopBar = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const TopBar = () => (
-  <StyledTopBar>
-    <Logotype />
-    <Hamburger />
-  </StyledTopBar>
-)
+const TopBar = () => {
+  const [navActive, setNavActive] = useState(false)
+
+  return (
+    <StyledTopBar>
+      <Logotype />
+      <Hamburger
+        handleClick={() => setNavActive(!navActive)}
+        isActive={navActive}
+      />
+    </StyledTopBar>
+  )
+}
 
 export default TopBar
