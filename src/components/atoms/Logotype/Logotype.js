@@ -7,6 +7,10 @@ const StyledLogotype = styled(Link)`
   font-weight: 600;
 `
 
-const LogoType = () => <StyledLogotype to="/">adamkoltun.dev</StyledLogotype>
+const LogoType = ({ closeMenu }) => (
+  <StyledLogotype to="/" onClick={closeMenu}>
+    adamkoltun.dev
+  </StyledLogotype>
+)
 
 export default LogoType
