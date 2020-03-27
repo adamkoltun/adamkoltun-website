@@ -4,6 +4,7 @@ import styled, { css } from "styled-components"
 const StyledHamburger = styled.button`
   border: none;
   background-color: transparent;
+  justify-self: end;
 `
 
 const StyledHamburgerBox = styled.span`
