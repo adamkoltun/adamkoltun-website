@@ -6,7 +6,7 @@ import MobileArrow from "../../../assets/icons/mobile-arrow.svg"
 
 const StyledHeaderWrapper = styled.header`
   display: grid;
-  grid-template-rows: 1fr auto 60px;
+  grid-template-rows: 1fr auto 80px;
   height: 100%;
   padding: 0 25px;
 `
@@ -29,7 +29,7 @@ const StyledHeading = styled.h1`
 `
 
 const StyledWebDesignSvg = styled(WebDesign)`
-  width: 70%;
+  width: 65%;
   justify-self: right;
   align-self: end;
 `
