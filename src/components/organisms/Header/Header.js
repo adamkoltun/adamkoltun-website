@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import Home from "../../../assets/images/home.svg"
@@ -41,12 +41,35 @@ const StyledMobileArrow = styled(MobileArrow)`
   align-self: center;
 `
 
-const Header = () => (
-  <StyledHeaderWrapper>
-    <StyledHeaderSvg />
-    <StyledHeading>Projektowanie stron internetowych</StyledHeading>
-    <StyledMobileArrow />
-  </StyledHeaderWrapper>
-)
+const titles = [
+  "Projektowanie stron internetowych",
+  "Responsive Web Design",
+  "Indywidualny projekt graficzny ",
+]
+
+const Header = () => {
+  const [title, setTitle] = useState(titles[0])
+
+  useEffect(() => {
+    let i = 1
+    const interval = setInterval(() => {
+      if (i <= 2) {
+        setTitle(titles[i++])
+      } else {
+        i = 0
+        setTitle(titles[i++])
+      }
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <StyledHeaderWrapper>
+      <StyledHeaderSvg />
+      <StyledHeading>{title}</StyledHeading>
+      <StyledMobileArrow />
+    </StyledHeaderWrapper>
+  )
+}
 
 export default Header
