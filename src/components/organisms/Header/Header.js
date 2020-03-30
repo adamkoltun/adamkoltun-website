@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-import WebDesign from "../../../assets/images/web-design.svg"
+import Home from "../../../assets/images/home.svg"
 import MobileArrow from "../../../assets/icons/mobile-arrow.svg"
 
 const StyledHeaderWrapper = styled.header`
   display: grid;
-  grid-template-rows: 1fr auto 80px;
+  grid-template-rows: 1fr auto 65px;
   height: 100%;
   padding: 0 25px;
 `
@@ -28,9 +28,10 @@ const StyledHeading = styled.h1`
   }
 `
 
-const StyledWebDesignSvg = styled(WebDesign)`
-  width: 65%;
-  justify-self: right;
+const StyledHeaderSvg = styled(Home)`
+  width: 75%;
+  margin-bottom: 20px;
+  justify-self: center;
   align-self: end;
 `
 
@@ -42,7 +43,7 @@ const StyledMobileArrow = styled(MobileArrow)`
 
 const Header = () => (
   <StyledHeaderWrapper>
-    <StyledWebDesignSvg />
+    <StyledHeaderSvg />
     <StyledHeading>Projektowanie stron internetowych</StyledHeading>
     <StyledMobileArrow />
   </StyledHeaderWrapper>
