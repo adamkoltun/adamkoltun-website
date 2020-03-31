@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
+import gsap from "gsap"
 
 import Home from "../../../assets/images/home.svg"
 import MobileArrow from "../../../assets/icons/mobile-arrow.svg"
@@ -9,6 +10,13 @@ const StyledHeaderWrapper = styled.header`
   grid-template-rows: 1fr auto 65px;
   height: 100%;
   padding: 0 25px;
+`
+
+const StyledHeaderSvg = styled(Home)`
+  width: 75%;
+  margin-bottom: 20px;
+  justify-self: center;
+  align-self: end;
 `
 
 const StyledHeading = styled.h1`
@@ -28,45 +36,59 @@ const StyledHeading = styled.h1`
   }
 `
 
-const StyledHeaderSvg = styled(Home)`
-  width: 75%;
-  margin-bottom: 20px;
-  justify-self: center;
-  align-self: end;
-`
-
 const StyledMobileArrow = styled(MobileArrow)`
   width: 20px;
   justify-self: center;
   align-self: center;
 `
 
-const titles = [
+const headings = [
   "Projektowanie stron internetowych",
   "Responsive Web Design",
-  "Indywidualny projekt graficzny ",
+  "Indywidualny projekt graficzny",
 ]
 
 const Header = () => {
-  const [title, setTitle] = useState(titles[0])
+  const [heading, setHeading] = useState(headings[0])
+  const headingRef = useRef(null)
 
   useEffect(() => {
+    const heading = headingRef.current
+
+    gsap.set(heading, { autoAlpha: 0 })
+
+    const changeHeading = () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } })
+      tl.fromTo(
+        heading,
+        { x: "-=300" },
+        { duration: 1, x: "+=300", autoAlpha: 1 }
+      ).fromTo(
+        heading,
+        { autoAlpha: 1 },
+        { duration: 1, delay: 1.5, autoAlpha: 0 }
+      )
+    }
+
+    changeHeading()
+
     let i = 1
     const interval = setInterval(() => {
+      changeHeading()
       if (i <= 2) {
-        setTitle(titles[i++])
+        setHeading(headings[i++])
       } else {
         i = 0
-        setTitle(titles[i++])
+        setHeading(headings[i++])
       }
-    }, 3500)
+    }, 3200)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <StyledHeaderWrapper>
       <StyledHeaderSvg />
-      <StyledHeading>{title}</StyledHeading>
+      <StyledHeading ref={headingRef}>{heading}</StyledHeading>
       <StyledMobileArrow />
     </StyledHeaderWrapper>
   )
