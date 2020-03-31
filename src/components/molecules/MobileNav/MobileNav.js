@@ -14,6 +14,7 @@ const StyledNavigationWrapper = styled.nav`
   padding: 30px 25px;
   background-color: #fff;
   transition: transform 0.8s ease;
+  z-index: 1;
 
   ${({ isActive }) =>
     isActive &&
