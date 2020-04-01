@@ -15,10 +15,12 @@ module.exports = {
           {
             family: `Montserrat`,
             variants: [`300`, `400`, `500`],
+            subsets: ["latin-ext"],
           },
           {
             family: `Fira Sans`,
             variants: [`400`, `600`],
+            subsets: ["latin-ext"],
           },
         ],
       },
