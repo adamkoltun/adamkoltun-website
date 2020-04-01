@@ -8,8 +8,7 @@ import MobileArrow from "../../../assets/icons/mobile-arrow.svg"
 const StyledHeaderWrapper = styled.header`
   display: grid;
   grid-template-rows: 1fr auto 65px;
-  height: 100%;
-  padding: 0 25px;
+  height: 100vh;
 `
 
 const StyledHeaderSvg = styled(Home)`
