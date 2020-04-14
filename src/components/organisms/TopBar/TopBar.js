@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
 
 import Logotype from "../../atoms/Logotype/Logotype"
@@ -36,10 +36,27 @@ const StyledDescription = styled.p`
     css`
       opacity: 0;
     `}
+
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      opacity: 0;
+    `}
 `
 
 const TopBar = () => {
   const [navActive, setNavActive] = useState(false)
+  const [isVisible, setVisibility] = useState(true)
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY === 0) {
+        setVisibility(true)
+      } else if (window.scrollY > 0) {
+        setVisibility(false)
+      }
+    })
+  })
 
   return (
     <>
@@ -49,7 +66,7 @@ const TopBar = () => {
           handleClick={() => setNavActive(!navActive)}
           isActive={navActive}
         />
-        <StyledDescription isActive={navActive}>
+        <StyledDescription isActive={navActive} isVisible={!isVisible}>
           Freelance Web Developer
         </StyledDescription>
       </StyledTopBar>
