@@ -24,14 +24,29 @@ const StyledNavigationWrapper = styled.nav`
 `
 
 const StyledMenu = styled.ul`
+  position: relative;
   display: flex;
   height: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-end;
   list-style: none;
+  overflow: hidden;
+
+  ${({ menuActive }) =>
+    menuActive &&
+    css`
+      li {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    `}
 `
 
 const StyledMenuElement = styled.li`
+  opacity: 0;
+  transition: transform 0.6s 0.2s ease-in-out;
+  transform: translateX(-100%);
   margin-bottom: 30px;
 `
 
@@ -75,7 +90,7 @@ const StyledGhIcon = styled(GitHubIcon)`
 
 const MobileNav = ({ handleClick, isActive }) => (
   <StyledNavigationWrapper isActive={isActive}>
-    <StyledMenu>
+    <StyledMenu menuActive={isActive}>
       <StyledMenuElement>
         <StyledLink to="/offer" onClick={handleClick} activeClassName="active">
           Oferta
