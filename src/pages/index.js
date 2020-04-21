@@ -1,5 +1,7 @@
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
+import Image from "gatsby-image"
 
 import Header from "../components/organisms/Header/Header"
 import Button from "../components/atoms/Button/Button"
@@ -11,17 +13,46 @@ const StyledWelcomeSection = styled.section`
   padding: 0 25px;
 `
 
-const StyledPortfolioSection = styled.section`
-  height: 100vh;
-
-  background-color: #222222;
-`
-
 const StyledParagraph = styled.p`
   margin: 40px 0;
 `
 
-const IndexPage = () => (
+const StyledPortfolioSection = styled.section`
+  padding: 75px 25px;
+  background-color: #222222;
+`
+
+const StyledSectionHeading = styled.h2`
+  margin: 0;
+  font-family: "Fira Sans";
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+`
+
+const StyledProjectWrapper = styled.div`
+  margin-top: 60px;
+`
+
+const ImageWrapper = styled(Image)`
+  width: 100%;
+  margin-bottom: 30px;
+`
+
+const StyledProjectHeading = styled.h4`
+  margin: 0;
+  font-family: "Fira Sans";
+  font-size: 16px;
+  color: #fff;
+`
+
+const StyledProjectDescription = styled.p`
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #7e7e7e;
+`
+
+const IndexPage = ({ data }) => (
   <>
     <Header />
     <main>
@@ -34,12 +65,36 @@ const IndexPage = () => (
             na danych, zebranych podczas analizy potrzeb użytkowników oraz
             biznesu. Jego zadaniem jest rozwinięcie Twojej firmy.
           </StyledParagraph>
-          <Button>Sprawdź ofertę</Button>
+          <Button destination="/offer">Sprawdź ofertę</Button>
         </div>
       </StyledWelcomeSection>
-      <StyledPortfolioSection></StyledPortfolioSection>
+      <StyledPortfolioSection>
+        <StyledSectionHeading>Wybrane projekty</StyledSectionHeading>
+        <StyledProjectWrapper>
+          <ImageWrapper fluid={data.file.childImageSharp.fluid} />
+          <StyledProjectHeading>Single Page Application</StyledProjectHeading>
+          <StyledProjectDescription>
+            www.hwtradegroup.com
+          </StyledProjectDescription>
+        </StyledProjectWrapper>
+        <Button white="true" destination="/portfolio">
+          Zobacz więcej
+        </Button>
+      </StyledPortfolioSection>
     </main>
   </>
 )
+
+export const query = graphql`
+  {
+    file(name: { eq: "hw-project" }) {
+      childImageSharp {
+        fluid(maxWidth: 583, maxHeight: 493, quality: 100) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
