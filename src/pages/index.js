@@ -5,13 +5,16 @@ import Header from "../components/organisms/Header/Header"
 import Button from "../components/atoms/Button/Button"
 import WelcomeExampleSVG from "../assets/images/offer.svg"
 
-const StyledPageWrapper = styled.div`
-  padding: 0 25px;
-`
-
 const StyledWelcomeSection = styled.section`
   display: grid;
   margin: 25px 0 75px 0;
+  padding: 0 25px;
+`
+
+const StyledPortfolioSection = styled.section`
+  height: 100vh;
+
+  background-color: #222222;
 `
 
 const StyledParagraph = styled.p`
@@ -19,7 +22,7 @@ const StyledParagraph = styled.p`
 `
 
 const IndexPage = () => (
-  <StyledPageWrapper>
+  <>
     <Header />
     <main>
       <StyledWelcomeSection>
@@ -34,8 +37,9 @@ const IndexPage = () => (
           <Button>Sprawdź ofertę</Button>
         </div>
       </StyledWelcomeSection>
+      <StyledPortfolioSection></StyledPortfolioSection>
     </main>
-  </StyledPageWrapper>
+  </>
 )
 
 export default IndexPage
