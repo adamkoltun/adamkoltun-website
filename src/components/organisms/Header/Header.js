@@ -9,6 +9,7 @@ const StyledHeaderWrapper = styled.header`
   display: grid;
   grid-template-rows: 1fr auto 65px;
   height: 100vh;
+  padding: 0 25px;
 `
 
 const StyledHeaderSvg = styled(Home)`
