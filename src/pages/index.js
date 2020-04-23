@@ -71,13 +71,20 @@ const IndexPage = ({ data }) => (
       <StyledPortfolioSection>
         <StyledSectionHeading>Wybrane projekty</StyledSectionHeading>
         <StyledProjectWrapper>
-          <ImageWrapper fluid={data.file.childImageSharp.fluid} />
+          <ImageWrapper fluid={data.kejm.childImageSharp.fluid} />
           <StyledProjectHeading>Single Page Application</StyledProjectHeading>
           <StyledProjectDescription>
             www.hwtradegroup.com
           </StyledProjectDescription>
         </StyledProjectWrapper>
-        <Button white="true" destination="/portfolio">
+        <StyledProjectWrapper>
+          <ImageWrapper fluid={data.hw.childImageSharp.fluid} />
+          <StyledProjectHeading>Single Page Application</StyledProjectHeading>
+          <StyledProjectDescription>
+            www.hwtradegroup.com
+          </StyledProjectDescription>
+        </StyledProjectWrapper>
+        <Button secondary="true" destination="/portfolio">
           Zobacz więcej
         </Button>
       </StyledPortfolioSection>
@@ -87,7 +94,14 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   {
-    file(name: { eq: "hw-project" }) {
+    hw: file(name: { eq: "hw-project" }) {
+      childImageSharp {
+        fluid(maxWidth: 583, maxHeight: 493, quality: 100) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    kejm: file(name: { eq: "kejm" }) {
       childImageSharp {
         fluid(maxWidth: 583, maxHeight: 493, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
