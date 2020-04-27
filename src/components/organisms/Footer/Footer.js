@@ -5,7 +5,7 @@ import Button from "../../atoms/Button/Button"
 
 const StyledFooter = styled.footer`
   display: grid;
-  grid-template-rows: 30% 25% 35% 10%;
+  grid-template-rows: 25% 30% 35% 10%;
   height: 100vh;
   padding: 0 25px;
   background-color: #cecece;
@@ -70,7 +70,9 @@ const Footer = () => (
     </StyledHeadingWrapper>
     <StyledInvitationWrapper>
       <StyledInvitation>Stwórzmy razem coś wartościowego.</StyledInvitation>
-      <Button>Skontaktuj się</Button>
+      <Button destination="/contact/" footer="true">
+        Skontaktuj się
+      </Button>
     </StyledInvitationWrapper>
     <StyledSocialWrapper>
       <StyledSocialLink href="">Github</StyledSocialLink>
