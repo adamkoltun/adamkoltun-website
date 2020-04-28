@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 
 import Header from "../components/organisms/Header/Header"
 import Button from "../components/atoms/Button/Button"
-import WelcomeExampleSVG from "../assets/images/offer.svg"
+// import WelcomeExampleSVG from "../assets/images/offer.svg"
 
 const StyledWelcomeSection = styled.section`
   display: grid;
@@ -13,8 +13,14 @@ const StyledWelcomeSection = styled.section`
   padding: 0 25px;
 `
 
+const StyledWelcomeHeading = styled.h2`
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+`
+
 const StyledParagraph = styled.p`
-  margin: 40px 0;
+  margin-bottom: 40px;
 `
 
 const StyledPortfolioSection = styled.section`
@@ -22,7 +28,7 @@ const StyledPortfolioSection = styled.section`
   background-color: #222222;
 `
 
-const StyledSectionHeading = styled.h2`
+const StyledSectionHeading = styled.h3`
   margin: 0;
   font-family: "Fira Sans";
   font-size: 20px;
@@ -58,8 +64,9 @@ const IndexPage = ({ data }) => (
     <Header />
     <main>
       <StyledWelcomeSection>
-        <WelcomeExampleSVG />
+        {/* <WelcomeExampleSVG /> */}
         <div>
+          <StyledWelcomeHeading>Nasz wspólny projekt</StyledWelcomeHeading>
           <StyledParagraph>
             Zajmuję się projektowaniem nowoczesnych oraz użytecznych stron
             internetowych. Projekt powstaje na podstawie strategii opracowanej
