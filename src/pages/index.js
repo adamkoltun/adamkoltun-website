@@ -37,6 +37,7 @@ const StyledProjectWrapper = styled.div`
 const ImageWrapper = styled(Image)`
   width: 100%;
   margin-bottom: 30px;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.4);
 `
 
 const StyledProjectHeading = styled.h4`
