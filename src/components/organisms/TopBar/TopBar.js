@@ -17,19 +17,17 @@ const StyledTopBar = styled.div`
   z-index: 2;
 `
 
+const StyledDescriptionWrapper = styled.div`
+  p :first-child {
+    margin-top: 15px;
+  }
+`
+
 const StyledDescription = styled.p`
   margin: 0;
-  margin-top: 15px;
   color: #7e7e7e;
   line-height: 1.3em;
   transition: opacity 0.2s linear;
-
-  ::before {
-    float: right;
-    content: "";
-    width: 15%;
-    height: 1em;
-  }
 
   ${({ isActive }) =>
     isActive &&
@@ -66,9 +64,14 @@ const TopBar = () => {
           handleClick={() => setNavActive(!navActive)}
           isActive={navActive}
         />
-        <StyledDescription isActive={navActive} isVisible={!isVisible}>
-          Freelance Web Developer
-        </StyledDescription>
+        <StyledDescriptionWrapper>
+          <StyledDescription isActive={navActive} isVisible={!isVisible}>
+            Freelance
+          </StyledDescription>
+          <StyledDescription isActive={navActive} isVisible={!isVisible}>
+            Web Developer
+          </StyledDescription>
+        </StyledDescriptionWrapper>
       </StyledTopBar>
       <MobileNav
         handleClick={() => setNavActive(!navActive)}
