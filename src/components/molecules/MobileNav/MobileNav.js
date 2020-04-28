@@ -64,15 +64,13 @@ const StyledIconWrapper = styled.ul`
   margin-top: 10px;
   justify-content: flex-end;
   list-style: none;
+
+  li :first-child {
+    margin-right: 30px;
+  }
 `
 
 const StyledIconElement = styled.li`
-  ${({ marginRight }) =>
-    marginRight &&
-    css`
-      margin-right: 30px;
-    `}
-
   a {
     display: inline-block;
   }
@@ -124,7 +122,7 @@ const MobileNav = ({ handleClick, isActive }) => (
         </StyledLink>
       </StyledMenuElement>
       <StyledIconWrapper>
-        <StyledIconElement marginRight>
+        <StyledIconElement>
           <a href="https://www.linkedin.com/in/adam-koltun/">
             <StyledInIcon />
           </a>
