@@ -81,9 +81,7 @@ const IndexPage = ({ data }) => (
         <StyledProjectWrapper>
           <ImageWrapper fluid={data.kejm.childImageSharp.fluid} />
           <StyledProjectHeading>Single Page Application</StyledProjectHeading>
-          <StyledProjectDescription>
-            www.hwtradegroup.com
-          </StyledProjectDescription>
+          <StyledProjectDescription>www.kejm.pl</StyledProjectDescription>
         </StyledProjectWrapper>
         <StyledProjectWrapper>
           <ImageWrapper fluid={data.hw.childImageSharp.fluid} />
