@@ -50,15 +50,16 @@ const StyledSocialLink = styled.a`
 
 const StyledCopyWrapper = styled.div`
   display: flex;
+  text-transform: uppercase;
 
+  p {
+    font-size: 13px;
+  }
   p :first-child {
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-right: 8px;
+    margin-right: 6px;
   }
 
   p :last-child {
-    font-size: 13px;
     color: #7e7e7e;
   }
 `
