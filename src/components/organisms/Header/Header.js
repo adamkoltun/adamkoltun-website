@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import gsap from "gsap"
 
-import Home from "../../../assets/images/home.svg"
-import MobileArrow from "../../../assets/icons/mobile-arrow.svg"
+import MobileArrow from "../../atoms/MobileArrow/MobileArrow"
+
+import Home from "../../../assets/images/header/home.svg"
 
 const StyledHeaderWrapper = styled.header`
   display: grid;
@@ -33,40 +34,6 @@ const StyledHeading = styled.h1`
     content: "";
     width: 30%;
     height: 1em;
-  }
-`
-
-const StyledMobileArrowWrapper = styled.div`
-  justify-self: center;
-  align-self: center;
-`
-
-const StyledMobileArrow = styled(MobileArrow)`
-  width: 20px;
-  animation: scrollDown 1.5s infinite linear both;
-
-  @keyframes scrollDown {
-    0% {
-      transform: translateY(-25%);
-      opacity: 0;
-    }
-
-    25% {
-      opacity: 0.3;
-    }
-
-    50% {
-      opacity: 1;
-    }
-
-    75% {
-      opacity: 0.3;
-    }
-
-    100% {
-      transform: translateY(125%);
-      opacity: 0;
-    }
   }
 `
 
@@ -117,9 +84,7 @@ const Header = () => {
     <StyledHeaderWrapper>
       <StyledHeaderSvg />
       <StyledHeading ref={headingRef}>{heading}</StyledHeading>
-      <StyledMobileArrowWrapper>
-        <StyledMobileArrow />
-      </StyledMobileArrowWrapper>
+      <MobileArrow />
     </StyledHeaderWrapper>
   )
 }
