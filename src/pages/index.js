@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => (
       <StyledWelcomeSection>
         {/* <WelcomeExampleSVG /> */}
         <div>
-          <StyledWelcomeHeading>Nasz wspólny projekt</StyledWelcomeHeading>
+          <StyledWelcomeHeading>Współpraca</StyledWelcomeHeading>
           <StyledParagraph>
             Zajmuję się projektowaniem nowoczesnych oraz użytecznych stron
             internetowych. Projekt powstaje na podstawie strategii opracowanej
