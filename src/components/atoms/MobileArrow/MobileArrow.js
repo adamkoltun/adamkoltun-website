@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Arrow from "../../../assets/icons/mobile-arrow.svg"
+import arrow from "../../../assets/icons/mobile-arrow.svg"
 
 const StyledMobileArrowWrapper = styled.div`
   justify-self: center;
   align-self: center;
 `
 
-const StyledMobileArrow = styled(Arrow)`
+const StyledMobileArrow = styled(arrow)`
   width: 20px;
   animation: scrollDown 1.5s infinite linear both;
 
