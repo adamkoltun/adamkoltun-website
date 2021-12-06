@@ -10,7 +10,7 @@ const StyledTopBar = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 25px;
+  padding: 30px 25px 0 25px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -25,7 +25,8 @@ const StyledDescriptionWrapper = styled.div`
 
 const StyledDescription = styled.p`
   margin: 0;
-  color: #7e7e7e;
+  font-size: 16px;
+  color: #405157;
   line-height: 1.3em;
   transition: opacity 0.2s linear;
 

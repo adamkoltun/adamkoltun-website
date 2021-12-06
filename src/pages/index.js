@@ -13,19 +13,18 @@ const StyledWelcomeSection = styled.section`
   padding: 0 25px;
 `
 
-const StyledWelcomeHeading = styled.h2`
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 600;
-`
-
 const StyledParagraph = styled.p`
   margin-bottom: 40px;
+  line-height: 26px;
 `
 
 const StyledPortfolioSection = styled.section`
   padding: 75px 25px;
-  background-color: #222222;
+  background-color: #00171f;
+
+  div :last-of-type {
+    margin-bottom: 50px;
+  }
 `
 
 const StyledSectionHeading = styled.h3`
@@ -56,7 +55,7 @@ const StyledProjectHeading = styled.h4`
 const StyledProjectDescription = styled.p`
   margin: 5px 0 0 0;
   font-size: 14px;
-  color: #7e7e7e;
+  color: #b1b8ba;
 `
 
 const IndexPage = ({ data }) => (
@@ -66,33 +65,29 @@ const IndexPage = ({ data }) => (
       <StyledWelcomeSection>
         {/* <WelcomeExampleSVG /> */}
         <div>
-          <StyledWelcomeHeading>Współpraca</StyledWelcomeHeading>
           <StyledParagraph>
             Zajmuję się projektowaniem nowoczesnych oraz użytecznych stron
-            internetowych. Projekt powstaje na podstawie strategii opracowanej
-            na danych, zebranych podczas analizy potrzeb użytkowników oraz
-            biznesu. Jego zadaniem jest rozwinięcie Twojej firmy.
+            internetowych. Projekt powstaje na podstawie strategii opracowanej z
+            zebranych danych. Jego zadaniem jest rozwinięcie Twojej firmy.
           </StyledParagraph>
-          <Button destination="/offer">Sprawdź ofertę</Button>
+          <Button destination="/offer">Współpraca</Button>
         </div>
       </StyledWelcomeSection>
       <StyledPortfolioSection>
         <StyledSectionHeading>Wybrane projekty</StyledSectionHeading>
         <StyledProjectWrapper>
           <ImageWrapper fluid={data.kejm.childImageSharp.fluid} />
-          <StyledProjectHeading>Single Page Application</StyledProjectHeading>
-          <StyledProjectDescription>www.kejm.pl</StyledProjectDescription>
+          <StyledProjectHeading>Sklep internetowy Soy Oy</StyledProjectHeading>
+          <StyledProjectDescription>www.soyoy.pl</StyledProjectDescription>
         </StyledProjectWrapper>
         <StyledProjectWrapper>
           <ImageWrapper fluid={data.hw.childImageSharp.fluid} />
-          <StyledProjectHeading>Single Page Application</StyledProjectHeading>
+          <StyledProjectHeading>Projekt HW Trade Group</StyledProjectHeading>
           <StyledProjectDescription>
             www.hwtradegroup.com
           </StyledProjectDescription>
         </StyledProjectWrapper>
-        <Button secondary="true" destination="/portfolio">
-          Zobacz więcej
-        </Button>
+        <Button destination="/portfolio">Portfolio</Button>
       </StyledPortfolioSection>
     </main>
   </>

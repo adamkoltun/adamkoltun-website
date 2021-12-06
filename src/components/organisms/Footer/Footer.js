@@ -8,7 +8,8 @@ const StyledFooter = styled.footer`
   grid-template-rows: 25% 30% 35% 10%;
   height: 100vh;
   padding: 0 25px;
-  background-color: #cecece;
+  background-color: #003459;
+  color: white;
 `
 
 const StyledHeadingWrapper = styled.div`
@@ -46,6 +47,7 @@ const StyledSocialLink = styled.a`
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
+  color: white;
 `
 
 const StyledCopyWrapper = styled.div`
@@ -58,10 +60,6 @@ const StyledCopyWrapper = styled.div`
   p :first-child {
     margin-right: 6px;
   }
-
-  p :last-child {
-    color: #7e7e7e;
-  }
 `
 
 const Footer = () => (
@@ -71,9 +69,7 @@ const Footer = () => (
     </StyledHeadingWrapper>
     <StyledInvitationWrapper>
       <StyledInvitation>Stwórzmy razem coś wartościowego.</StyledInvitation>
-      <Button destination="/contact/" footer="true">
-        Skontaktuj się
-      </Button>
+      <Button destination="/contact/">Kontakt</Button>
     </StyledInvitationWrapper>
     <StyledSocialWrapper>
       <StyledSocialLink href="">Github</StyledSocialLink>

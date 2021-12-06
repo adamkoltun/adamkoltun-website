@@ -11,13 +11,22 @@ const StyledHeaderWrapper = styled.header`
   grid-template-rows: 1fr auto 65px;
   height: 100vh;
   padding: 0 25px;
+
+  @media (min-width: 360px) {
+    /* grid-template-rows: 1fr auto 75px; */
+  }
 `
 
 const StyledHeaderSvg = styled(Home)`
-  width: 75%;
+  width: 76%;
   margin-bottom: 20px;
   justify-self: center;
   align-self: end;
+
+  @media (min-width: 360px) {
+    width: 78%;
+    margin-bottom: 25px;
+  }
 `
 
 const StyledHeading = styled.h1`
@@ -34,6 +43,11 @@ const StyledHeading = styled.h1`
     content: "";
     width: 30%;
     height: 1em;
+  }
+
+  @media (min-width: 360px) {
+    font-size: 34px;
+    line-height: 41px;
   }
 `
 

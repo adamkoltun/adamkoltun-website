@@ -40,6 +40,12 @@ const StyledMenu = styled.ul`
         opacity: 1;
       }
     `}
+
+  @media (min-width: 360px) {
+    li :last-of-type {
+      margin-bottom: 70px;
+    }
+  }
 `
 
 const StyledMenuElement = styled.li`
@@ -47,6 +53,10 @@ const StyledMenuElement = styled.li`
   transition: transform 0.6s 0.2s ease-in-out;
   transform: translateX(-100%);
   margin-bottom: 30px;
+
+  @media (min-width: 360px) {
+    margin-bottom: 35px;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -61,6 +71,7 @@ const StyledLink = styled(Link)`
 
 const StyledIconWrapper = styled.ul`
   display: flex;
+  height: 30px;
   margin-top: 10px;
   justify-content: flex-end;
   list-style: none;
@@ -90,7 +101,7 @@ const MobileNav = ({ handleClick, isActive }) => (
     <StyledMenu menuActive={isActive}>
       <StyledMenuElement>
         <StyledLink to="/offer" onClick={handleClick} activeClassName="active">
-          Oferta
+          Współpraca
         </StyledLink>
       </StyledMenuElement>
       <StyledMenuElement>
